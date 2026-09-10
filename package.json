@@ -2,13 +2,21 @@
   "name": "stage-prod",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "check.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node check.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamalgoogle/Stage-Prod-workflow.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jamalgoogle/Stage-Prod-workflow/issues"
+  },
+  "homepage": "https://github.com/jamalgoogle/Stage-Prod-workflow#readme"
 }
