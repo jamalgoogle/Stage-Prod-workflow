@@ -1,0 +1,22 @@
+name: Stage - Check and Deploy
+
+on:
+  push:
+    branches: [stage]
+
+jobs:
+  check-and-deploy:
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run checks
+        run: node check.js
+
+      - name: "Deploy to staging (simulated)"
+        run: |
+          echo "🚀 Deploying commit ${{ github.sha }} to STAGING"
+          echo "Staging URL would be: https://staging.example.com"
+          sed 's/ENVIRONMENT_NAME/staging/' index.html > deployed.html
+          cat deployed.html

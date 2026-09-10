@@ -1,0 +1,22 @@
+name: Production - Check and Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  check-and-deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run checks
+        run: node check.js
+
+      - name: "Deploy to production (simulated)"
+        run: |
+          echo "🚀 Deploying commit ${{ github.sha }} to PRODUCTION"
+          echo "Production URL would be: https://example.com"
+          sed 's/ENVIRONMENT_NAME/production/' index.html > deployed.html
+          cat deployed.html
